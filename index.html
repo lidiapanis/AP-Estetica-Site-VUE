@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrea Panis Estetica</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+</head>
+<body>
+  <section id="app">
+    <header>
+      <div class="header-conteudo  limitar-box">
+        <h1>{{ nomeEmpresa }}</h1>
+
+        <nav>
+          <a class="link" href="#sobre">Sobre</a>
+          <a class="link" href="#procedimentos">Procedimentos</a>
+          <a class="link" href="#contato">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="titulo-site">
+        <div class="titulo-site-descricao">
+          <h2>{{ nomeEmpresa }}</h2>
+          <p>Cuidando de você</p>
+        </div>
+      </div>
+
+      <div id="sobre" class="box-sobre limitar-box">
+        <h2>Quem somos nós?</h2>
+
+        <p>A {{ nomeEmpresa }} é um estabelecimento de estética, promovendo beleza e bem estar.</p>
+
+        <p> Somos especializados em alongamentos de cilios, unhas, design de sobrancelhas e limpezas de pele</p>
+
+        <img src="assets/unhas.jpeg" />
+      </div>
+
+      <div id="procedimentos" class="box-sobre limitar-box">
+        <h2>Principais Procedimentos</h2>
+
+        <p>Nossos profissionais estão prontos para aplicar os produtos de melhor qualidade presentes no mercado.</p>
+
+        <ul class="lista-proc">
+          <li v-for="procedimentos in colecaoProcedimentos" class="box-proc">
+            <div class="box-proc-img">
+              <img src="assets/cilios.png"/>
+            </div>
+
+            <div class="box-proc-descricao">
+              <h3>{{ procedimentos.nome }}</h3>
+
+              <p>{{ procedimentos.descricao }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="depoimentos" class="box-depoimentos limitar-box">
+        <h2>O que nossos clientes estão falando</h2>
+
+        <ul class="lista-depoimentos" >
+          <li v-for="depoimento in colecaoDepoimentos" class="box-depoimento">
+            <div class="box-depoimento-img">
+              <img src="assets/icon-cliente.png"/>
+            </div>
+
+            <h3>{{ depoimento.cliente }}</h3>
+            <p>{{ depoimento.opiniao }}</p>
+          </li>
+        </ul>
+      </div>
+
+      <div id="contato" class="box-contato limitar-box">
+        <h2>Contato</h2>
+        <p>Atendemos de Segunda a Sábado.</p>
+        <p>Maiores informações através do número (14) 98137-1380.</p>
+        <p>Estamos localizados na R: Pereira da Silva, 146 - Vila São Lucio - Botucatu - SP</p><div class="container-rota">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d919.0059296801574!2d-48.452016170773284!3d-22.875582199064237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c7209c7c1789d9%3A0x3b5b3ed8ca6af03d!2sR.%20dos%20Costas%2C%20146%20-%20Vila%20Sao%20Lucio%2C%20Botucatu%20-%20SP%2C%2018603-191!5e0!3m2!1spt-BR!2sbr!4v1658776326610!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+
+    <footer>© Copyright - {{ nomeEmpresa }}</footer>
+  </section>
+
+  <script src="app/script.js"></script>
+</body>
+</html>
